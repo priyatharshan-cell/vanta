@@ -1,2 +1,0 @@
-# vanta
-Hello Vanta
