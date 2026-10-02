@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vanta Mobile — Flagship phones, properly set up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Flagship smartphones, trade-ins, repairs and a members club. Collect in store or delivered island-wide.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060607;--ch:#101113;--ch2:#17181b;--line:#25272c;--tx:#ece9e3;--mu:#8d9097;--ac:#9db8ff;--ac2:#e9c9a0;--r:22px;
+--hd:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--bd:"Instrument Sans","Segoe UI",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px;height:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1rem/1.65 var(--bd);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100%}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(60% 40% at 80% 0,rgba(157,184,255,.10),transparent 70%),radial-gradient(50% 35% at 0 60%,rgba(233,201,160,.06),transparent 70%)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--hd);margin:0;line-height:1.02;letter-spacing:-.025em}
+h2{font-size:clamp(2.1rem,5.2vw,4rem);font-weight:700}
+h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+p{margin:0;color:var(--mu)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto;position:relative;z-index:1}
+section{padding:clamp(72px,11vw,150px) 0;position:relative;z-index:1}
+.head{display:grid;gap:18px;max-width:760px;margin-bottom:clamp(36px,6vw,72px)}
+.head p{font-size:1.1rem;max-width:56ch}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent;padding-top:env(safe-area-inset-top,0px)}
+nav.s{background:rgba(6,6,7,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nb{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font:800 1.35rem var(--hd);letter-spacing:-.04em}
+.logo i{font-style:normal;color:var(--ac)}
+.links{display:flex;gap:30px;font-size:.93rem;color:var(--mu)}
+.links a{transition:color .25s}.links a:hover{color:var(--tx)}
+.cartb{display:flex;align-items:center;gap:10px}
+.cart{position:relative;border:1px solid var(--line);background:var(--ch);color:var(--tx);height:42px;padding:0 16px;border-radius:99px;font:500 .9rem var(--bd);cursor:pointer;transition:border-color .25s}
+.cart:hover{border-color:var(--ac)}
+.cart b{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:8px;border-radius:99px;background:var(--ac);color:#06080f;font-size:.75rem;transition:transform .3s cubic-bezier(.3,1.8,.5,1)}
+.cart b.pop{transform:scale(1.5)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 28px;border-radius:99px;font:600 1rem var(--bd);border:1px solid var(--line);background:transparent;color:var(--tx);cursor:pointer;transition:transform .3s,background .3s,border-color .3s,box-shadow .3s}
+.btn:hover{border-color:var(--tx);transform:translateY(-2px)}
+.btn.p{background:var(--tx);color:#08090b;border-color:var(--tx)}
+.btn.p:hover{box-shadow:0 14px 44px -10px rgba(157,184,255,.55);background:#fff}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;padding:130px 0 70px}
+.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.9rem,8.4vw,7.2rem);font-weight:800;letter-spacing:-.045em}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--tx);opacity:.9}
+.hero .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:46ch;margin:28px 0 38px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.stats{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,60px);margin-top:clamp(40px,7vw,80px);padding-top:28px;border-top:1px solid var(--line)}
+.stats strong{display:block;font:700 clamp(1.8rem,3.4vw,2.7rem) var(--hd);letter-spacing:-.03em}
+.stats span{font-size:.88rem;color:var(--mu)}
+.stage{position:relative;display:grid;place-items:center;min-height:520px}
+.halo{position:absolute;width:min(480px,90%);aspect-ratio:1;border-radius:50%;background:conic-gradient(from 200deg,rgba(157,184,255,.35),rgba(233,201,160,.18),transparent 60%,rgba(157,184,255,.35));filter:blur(70px);animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* css phone */
+.ph{--c1:#9db8ff;--c2:#2a2f6b;position:relative;width:var(--w,250px);aspect-ratio:9/19;border-radius:15% / 7.4%;padding:3.2%;background:linear-gradient(145deg,#d8d6d2,#4a4b4f 40%,#1b1c1f 60%,#8a8b90);box-shadow:0 50px 90px -30px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,255,255,.25)}
+.ph::after{content:"";position:absolute;right:-1.2%;top:20%;width:1.2%;height:11%;border-radius:3px;background:#777}
+.scr{height:100%;border-radius:12.5% / 6.1%;background:radial-gradient(80% 50% at 30% 15%,var(--c1),transparent 70%),radial-gradient(70% 50% at 80% 90%,var(--c2),transparent 70%),#050507;position:relative;overflow:hidden}
+.scr::before{content:"";position:absolute;top:2.6%;left:50%;width:30%;height:3.4%;transform:translateX(-50%);border-radius:99px;background:#000}
+.scr::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 48%,transparent 60%);transform:translateX(-120%);animation:sheen 6s 1.5s infinite}
+@keyframes sheen{40%,100%{transform:translateX(120%)}}
+.tm{position:absolute;top:22%;width:100%;text-align:center;font:700 clamp(2rem,5vw,3.4rem) var(--hd);letter-spacing:-.04em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.4)}
+.tm small{display:block;font:500 .75rem var(--bd);letter-spacing:0;opacity:.8}
+.hero .ph{--w:min(280px,64vw);z-index:2;will-change:transform;transform:rotate(-6deg)}
+.ph.b{position:absolute;z-index:1;--w:min(230px,52vw);--c1:#e9c9a0;--c2:#4a2a1a;transform:translate(34%,8%) rotate(9deg);opacity:.85}
+.chip{position:absolute;z-index:3;padding:12px 16px;border-radius:16px;background:rgba(20,21,24,.6);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:.82rem;animation:fl 6s ease-in-out infinite}
+.chip b{display:block;font:700 1rem var(--hd)}
+.c1{left:0;top:18%}.c2{right:0;bottom:16%;animation-delay:-3s}
+@keyframes fl{50%{translate:0 -10px}}
+
+/* marquee */
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:20px 0;position:relative;z-index:1}
+.mt{display:flex;gap:60px;width:max-content;animation:mq 34s linear infinite;font:700 1.5rem var(--hd);color:#3a3c42;letter-spacing:-.02em}
+.mt span{white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* products */
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc{background:linear-gradient(180deg,var(--ch2),var(--ch));border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:16px;transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.pc:hover{transform:translateY(-8px);border-color:#3a3d44}
+.pv{display:grid;place-items:center;padding:26px 0 10px;border-radius:16px;background:radial-gradient(60% 60% at 50% 55%,rgba(255,255,255,.07),transparent 70%);overflow:hidden}
+.pv .ph{--w:112px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.pc:hover .pv .ph{transform:scale(1.08) rotate(-4deg) translateY(-4px)}
+.pc p{font-size:.88rem}
+.pr{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.pr strong{font:700 1.15rem var(--hd)}
+.add{height:40px;padding:0 16px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--tx);font:500 .85rem var(--bd);cursor:pointer;transition:all .3s}
+.add:hover{background:var(--tx);color:#08090b}
+.add.ok{background:var(--ac);border-color:var(--ac);color:#06080f}
+.tag{font-size:.75rem;color:var(--ac2)}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.pl{border:1px solid var(--line);border-radius:28px;padding:34px 30px;background:var(--ch);display:flex;flex-direction:column;gap:22px;transition:transform .5s,border-color .4s}
+.pl:hover{transform:translateY(-6px)}
+.pl.f{background:linear-gradient(160deg,#1d2230,#101113 60%);border-color:#44537d;position:relative;box-shadow:0 40px 90px -40px rgba(157,184,255,.35)}
+.pl.f em{position:absolute;top:-13px;left:30px;background:var(--ac);color:#06080f;font:600 .78rem var(--bd);padding:4px 12px;border-radius:99px;font-style:normal}
+.pl .pp{font:800 3rem var(--hd);letter-spacing:-.04em;color:var(--tx)}
+.pl .pp small{font:400 .95rem var(--bd);color:var(--mu);letter-spacing:0}
+.pl ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;color:#c3c1bc;font-size:.95rem}
+.pl li{display:flex;gap:12px}
+.pl li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--ac) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5.5 10.5l3 3 6-7' fill='none' stroke='%2306080f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/100%}
+.pl .btn{margin-top:auto;justify-content:center}
+.tg{display:inline-flex;padding:4px;border:1px solid var(--line);border-radius:99px;background:var(--ch);margin-top:8px;width:fit-content}
+.tg button{border:0;background:none;color:var(--mu);font:500 .9rem var(--bd);padding:8px 18px;border-radius:99px;cursor:pointer;transition:all .3s}
+.tg button.on{background:var(--tx);color:#08090b}
+
+/* why */
+.wy{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.wy div{padding:38px 32px;display:grid;gap:12px;align-content:start;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .4s}
+.wy div:hover{background:var(--ch)}
+.wy div:nth-child(3n){border-right:0}.wy div:nth-last-child(-n+3){border-bottom:0}
+.wy svg{width:30px;height:30px;stroke:var(--ac);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* facilities */
+.fc{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(230px,auto);gap:16px}
+.fx{position:relative;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;overflow:hidden;border:1px solid var(--line);background:var(--ch);isolation:isolate;transition:transform .5s}
+.fx:hover{transform:scale(.985)}
+.fx::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--g);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.fx:hover::before{transform:scale(1.12)}
+.fx::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(6,6,7,.9))}
+.fx:nth-child(1){grid-column:span 4;grid-row:span 2;--g:radial-gradient(70% 70% at 70% 30%,#3b4f8f,transparent),linear-gradient(135deg,#171a26,#0c0d12)}
+.fx:nth-child(2){grid-column:span 2;--g:radial-gradient(70% 70% at 30% 20%,#7a5a3a,transparent),#14110e}
+.fx:nth-child(3){grid-column:span 2;--g:radial-gradient(70% 70% at 70% 20%,#2f6b64,transparent),#0d1413}
+.fx:nth-child(4){grid-column:span 3;--g:radial-gradient(70% 80% at 20% 30%,#5a3a74,transparent),#120e16}
+.fx:nth-child(5){grid-column:span 3;--g:radial-gradient(70% 80% at 80% 30%,#6b3a3a,transparent),#150e0e}
+.fx:nth-child(1) h3{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+.fx p{color:#b5b4b0;max-width:42ch;font-size:.95rem}
+
+/* team */
+.tr{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tc{display:grid;gap:14px}
+.av{aspect-ratio:4/5;border-radius:var(--r);background:var(--g);position:relative;overflow:hidden;border:1px solid var(--line)}
+.av::before{content:attr(data-i);position:absolute;inset:0;display:grid;place-items:center;font:800 5.5rem var(--hd);color:rgba(255,255,255,.14);letter-spacing:-.05em;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.tc:hover .av::before{transform:scale(1.15)}
+.av span{position:absolute;left:14px;bottom:14px;padding:6px 12px;border-radius:99px;background:rgba(6,6,7,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:.78rem}
+.tc p{font-size:.9rem}
+
+/* testimonials */
+.tq{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.q{padding:32px;border-radius:var(--r);background:var(--ch);border:1px solid var(--line);display:flex;flex-direction:column;gap:22px;justify-content:space-between}
+.q blockquote{margin:0;font:500 1.15rem/1.5 var(--hd);color:var(--tx);letter-spacing:-.01em}
+.q cite{font-style:normal;font-size:.88rem;color:var(--mu)}
+.q cite b{display:block;color:var(--tx);font-weight:600}
+.stars{color:var(--ac2);letter-spacing:3px;font-size:.9rem}
+
+/* faq */
+.fq{max-width:860px;display:grid}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:26px 0;font:600 1.2rem var(--hd);letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font:400 1.3rem var(--bd);color:var(--mu);transition:transform .4s,background .3s,color .3s}
+details[open] summary::after{transform:rotate(135deg);background:var(--tx);color:#08090b}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+details[open] .ans{grid-template-rows:1fr}
+.ans div{overflow:hidden}.ans p{padding:0 50px 26px 0}
+
+/* cta + footer */
+.cta{text-align:center;border:1px solid var(--line);border-radius:36px;padding:clamp(48px,9vw,110px) 24px;background:radial-gradient(60% 90% at 50% 120%,rgba(157,184,255,.25),transparent),var(--ch);display:grid;gap:26px;justify-items:center}
+.cta h2{max-width:14ch}
+footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;z-index:1}
+.fg{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px}
+.fg h4{margin:0 0 16px;font:600 .95rem var(--bd)}
+.fg a,.fg li{display:block;color:var(--mu);font-size:.92rem;padding:5px 0;transition:color .25s}
+.fg a:hover{color:var(--tx)}
+.fg ul{list-style:none;margin:0;padding:0}
+.big{font:800 clamp(3rem,15vw,12rem) var(--hd);letter-spacing:-.06em;line-height:.9;color:#141518;margin:60px 0 24px;user-select:none}
+.fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--mu);font-size:.85rem}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);z-index:60;background:var(--tx);color:#08090b;padding:14px 22px;border-radius:99px;font-weight:600;font-size:.92rem;transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
+.toast.on{transform:translate(-50%,0)}
+
+@media(max-width:1020px){
+ .pg{grid-template-columns:repeat(2,1fr)}.tr{grid-template-columns:repeat(2,1fr)}
+ .wy{grid-template-columns:repeat(2,1fr)}.wy div:nth-child(n){border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.wy div:nth-child(2n){border-right:0}.wy div:nth-last-child(-n+2){border-bottom:0}
+ .tq{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+ .links{display:none}.hg{grid-template-columns:1fr}.stage{min-height:420px;order:-1;margin-top:-20px}
+ .hero{padding-top:100px}.plans{grid-template-columns:1fr}
+ .fc{grid-template-columns:1fr 1fr}.fx:nth-child(n){grid-column:span 2;grid-row:auto}.fx:nth-child(2),.fx:nth-child(3){grid-column:span 1}
+}
+@media(max-width:520px){
+ .pg,.tr{grid-template-columns:1fr 1fr;gap:12px}.pc{padding:14px}.pv .ph{--w:84px}.wy{grid-template-columns:1fr}.wy div:nth-child(n){border-right:0;border-bottom:1px solid var(--line)}.wy div:last-child{border-bottom:0}
+ .fc{grid-template-columns:1fr}.fx:nth-child(n){grid-column:auto}.fg{grid-template-columns:1fr}.chip{display:none}.ans p{padding-right:0}
+ .pr{flex-direction:column;align-items:flex-start;gap:10px}.btn{width:100%;justify-content:center}.ctas{width:100%}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap nb">
+ <a class="logo" href="#top" aria-label="Vanta Mobile home">vanta<i>.</i></a>
+ <div class="links"><a href="#shop">Phones</a><a href="#club">Club</a><a href="#why">Why Vanta</a><a href="#store">The store</a><a href="#experts">Experts</a><a href="#faq">FAQ</a></div>
+ <div class="cartb"><button class="cart" id="cartBtn" aria-label="Cart">Cart<b id="cnt">0</b></button></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+ <div class="hg">
+  <div>
+   <h1 class="rv in">The flagship<br>you deserve.<span>Set up right.</span></h1>
+   <p class="lead rv in" style="--d:.15s">Sealed flagships from Apple, Samsung and Google. Every phone is activated, transferred and protected before it leaves our counter.</p>
+   <div class="ctas rv in" style="--d:.3s"><a class="btn p" href="#shop">Shop phones</a><a class="btn" href="#club">Join Vanta Club</a></div>
+   <div class="stats rv in" style="--d:.45s">
+    <div><strong><span data-n="42000">0</span>+</strong><span>phones delivered</span></div>
+    <div><strong><span data-n="4.9" data-d="1">0</span>/5</strong><span>average rating</span></div>
+    <div><strong><span data-n="45">0</span> min</strong><span>average data transfer</span></div>
+   </div>
+  </div>
+  <div class="stage">
+   <div class="halo"></div>
+   <div class="ph b" data-p=".4"><div class="scr"></div></div>
+   <div class="ph" data-p="-.8"><div class="scr"><div class="tm"><small id="dt">Friday</small><span id="tm">9:41</span></div></div></div>
+   <div class="chip c1"><b>Free setup</b>Data moved while you wait</div>
+   <div class="chip c2"><b>2-year cover</b>Screen, battery, water</div>
+  </div>
+ </div>
+</div></header>
+
+<div class="mq" aria-hidden="true"><div class="mt">
+ <span>iPhone 17 Pro</span><span>Galaxy S26 Ultra</span><span>Pixel 10 Pro</span><span>Fold &amp; Flip</span><span>Trade-ins accepted</span><span>Genuine parts</span>
+ <span>iPhone 17 Pro</span><span>Galaxy S26 Ultra</span><span>Pixel 10 Pro</span><span>Fold &amp; Flip</span><span>Trade-ins accepted</span><span>Genuine parts</span>
+</div></div>
+
+<section id="shop"><div class="wrap">
+ <div class="head rv"><h2>This season's phones.</h2><p>Brand-new, sealed, with full local warranty. Prices include setup and a tempered glass fitted by our team.</p></div>
+ <div class="pg" id="pg"></div>
+</div></section>
+
+<section id="club"><div class="wrap">
+ <div class="head rv"><h2>Vanta Club. Pay once, get looked after.</h2><p>Membership covers the things that go wrong after you buy. Switch billing any time.</p>
+  <div class="tg" role="group" aria-label="Billing"><button class="on" data-b="m">Monthly</button><button data-b="y">Yearly · 2 months free</button></div></div>
+ <div class="plans">
+  <article class="pl rv"><h3>Essential</h3><p>For phones you want to keep clean and working.</p><div class="pp"><span data-m="9" data-y="90">9</span><small> $ / <u class="per">mo</u></small></div>
+   <ul><li>Free screen protector refits</li><li>10% off accessories</li><li>Free data transfer</li><li>Same-day battery checks</li></ul><a class="btn" href="#faq">Choose Essential</a></article>
+  <article class="pl f rv" style="--d:.12s"><em>Most chosen</em><h3>Signature</h3><p>Full cover for the phone you can't be without.</p><div class="pp"><span data-m="19" data-y="190">19</span><small> $ / <u class="per">mo</u></small></div>
+   <ul><li>Accidental screen &amp; water cover</li><li>Loan phone during repairs</li><li>Priority 30-minute service</li><li>15% off accessories</li><li>Trade-in bonus of 8%</li></ul><a class="btn p" href="#faq">Choose Signature</a></article>
+  <article class="pl rv" style="--d:.24s"><h3>Reserve</h3><p>First access, concierge, nothing to think about.</p><div class="pp"><span data-m="39" data-y="390">39</span><small> $ / <u class="per">mo</u></small></div>
+   <ul><li>Everything in Signature</li><li>Pre-orders before public launch</li><li>Annual upgrade, no fees</li><li>Home pickup &amp; delivery</li><li>Private line to a specialist</li></ul><a class="btn" href="#faq">Choose Reserve</a></article>
+ </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+ <div class="head rv"><h2>Why people come back.</h2><p>We stay small on purpose, so every phone and every customer gets proper attention.</p></div>
+ <div class="wy rv">
+  <div><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.500-8-9V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg><h3>100% genuine</h3><p>Imported through authorised channels, sealed, with brand warranty and invoice.</p></div>
+  <div><svg viewBox="0 0 24 24"><rect x="7" y="2.500" width="10" height="19" rx="2.500"/><path d="M11 18.500h2"/></svg><h3>Ready on day one</h3><p>Activated, updated, accounts signed in and your photos moved across before pickup.</p></div>
+  <div><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.700L3 8"/><path d="M3 3v5h5"/></svg><h3>14-day swap</h3><p>Change your mind within two weeks and we exchange it, no questions.</p></div>
+  <div><svg viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7.500" cy="17.500" r="1.500"/><circle cx="17.500" cy="17.500" r="1.500"/></svg><h3>Delivered island-wide</h3><p>Insured courier in 24 to 48 hours, with a live tracking link.</p></div>
+  <div><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6H9.500a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg><h3>Fair trade-ins</h3><p>Get a firm quote in five minutes. Credit is applied to your new phone on the spot.</p></div>
+  <div><svg viewBox="0 0 24 24"><path d="M14.500 6.500a4 4 0 0 0-5 5L3 18l3 3 6.500-6.500a4 4 0 0 0 5-5l-2.500 2.500-2.500-.5-.5-2.500z"/></svg><h3>In-house repair lab</h3><p>Genuine parts, repairs while you wait, and a 6-month warranty on every fix.</p></div>
+ </div>
+</div></section>
+
+<section id="store"><div class="wrap">
+ <div class="head rv"><h2>Inside the store.</h2><p>A showroom built to try things properly, not to rush you to a till.</p></div>
+ <div class="fc">
+  <div class="fx rv"><h3>The showroom</h3><p>Every flagship on live display. Compare cameras side by side under studio lighting before you decide.</p></div>
+  <div class="fx rv" style="--d:.1s"><h3>Setup bar</h3><p>Seated, quiet, coffee included. Your data moves across in about 45 minutes.</p></div>
+  <div class="fx rv" style="--d:.2s"><h3>Repair lab</h3><p>A glass-walled bench where you can watch your phone being repaired.</p></div>
+  <div class="fx rv"><h3>Trade-in desk</h3><p>Diagnostics, data wipe and an instant written quote.</p></div>
+  <div class="fx rv" style="--d:.1s"><h3>Accessory wall</h3><p>Cases, chargers, audio and MagSafe gear, tested by our team first.</p></div>
+ </div>
+</div></section>
+
+<section id="experts"><div class="wrap">
+ <div class="head rv"><h2>Talk to people who use these phones daily.</h2><p>No commission games. Our specialists recommend what fits how you actually live.</p></div>
+ <div class="tr">
+  <div class="tc rv"><div class="av" data-i="AN" style="--g:linear-gradient(160deg,#3a4a7a,#101218)"><span>iPhone &amp; iPad</span></div><div><h3>Arjun Nadesan</h3><p>Ten years in Apple repair and migration.</p></div></div>
+  <div class="tc rv" style="--d:.1s"><div class="av" data-i="SF" style="--g:linear-gradient(160deg,#6a4f33,#13100d)"><span>Samsung &amp; Android</span></div><div><h3>Sara Fernando</h3><p>Foldables, DeX and camera tuning.</p></div></div>
+  <div class="tc rv" style="--d:.2s"><div class="av" data-i="MR" style="--g:linear-gradient(160deg,#2f6b64,#0b1211)"><span>Repairs &amp; diagnostics</span></div><div><h3>Mohamed Rizwan</h3><p>Board-level repair and water recovery.</p></div></div>
+  <div class="tc rv" style="--d:.3s"><div class="av" data-i="DP" style="--g:linear-gradient(160deg,#5a3a74,#110d15)"><span>Trade-ins &amp; Club</span></div><div><h3>Dilini Perera</h3><p>Honest valuations and the right plan for you.</p></div></div>
+ </div>
+</div></section>
+
+<section id="voices"><div class="wrap">
+ <div class="head rv"><h2>Heard at the counter.</h2></div>
+ <div class="tq">
+  <div class="q rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>I walked in with an old phone and left with a new one that already had every photo and app. It took under an hour.</blockquote><cite><b>Nimal W.</b>Bought a Pixel 10 Pro</cite></div>
+  <div class="q rv" style="--d:.1s"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Dropped my phone in the sea. Club cover replaced it the same afternoon. That one repair paid for the whole year.</blockquote><cite><b>Kavya S.</b>Signature member</cite></div>
+  <div class="q rv" style="--d:.2s"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>They talked me out of the most expensive model and into the right one. I've never had that from a phone shop.</blockquote><cite><b>Ravi D.</b>Bought a Galaxy S26</cite></div>
+ </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <div class="head rv"><h2>Questions, answered.</h2></div>
+ <div class="fq rv">
+  <details open><summary>Are the phones brand new and under warranty?</summary><div class="ans"><div><p>Yes. Every phone is sealed and comes with the manufacturer's warranty plus a local invoice. We never sell refurbished units as new.</p></div></div></details>
+  <details><summary>What does free setup include?</summary><div class="ans"><div><p>We activate the SIM, update the system, sign in your accounts, move photos, contacts and chats, and fit a screen protector.</p></div></div></details>
+  <details><summary>Can I trade in my old phone?</summary><div class="ans"><div><p>Yes. Bring it in and we quote in five minutes. The credit goes straight toward your new phone, and Club members get an extra bonus.</p></div></div></details>
+  <details><summary>How fast is delivery?</summary><div class="ans"><div><p>Island-wide courier delivery takes 24 to 48 hours. You get a tracking link, and the parcel is insured until you sign for it.</p></div></div></details>
+  <details><summary>Can I cancel Vanta Club?</summary><div class="ans"><div><p>Any time. Monthly plans stop at the end of the billing period. Yearly plans are refunded pro rata in the first 30 days.</p></div></div></details>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="cta rv">
+ <h2>Pick it up today. Use it tonight.</h2><p>Reserve online and we'll have it set up and waiting at the counter.</p>
+ <a class="btn p" href="#shop">Reserve a phone</a>
+</div></div></section>
+
+<footer><div class="wrap">
+ <div class="fg">
+  <div><a class="logo" href="#top" style="padding:0;font-size:1.5rem">vanta<i>.</i></a><p style="max-width:34ch;margin-top:14px">Flagship phones, set up properly, and looked after for as long as you own them.</p></div>
+  <div><h4>Shop</h4><a href="#shop">Phones</a><a href="#club">Vanta Club</a><a href="#store">Trade-in</a></div>
+  <div><h4>Company</h4><a href="#why">Why Vanta</a><a href="#experts">Specialists</a><a href="#faq">Help</a></div>
+  <div><h4>Visit</h4><ul><li>Main Street, Negombo</li><li>Open daily, 10am to 8pm</li><li>+94 77 000 0000</li></ul></div>
+ </div>
+ <div class="big" aria-hidden="true">vanta.</div>
+ <div class="fb"><span>© 2026 Vanta Mobile. All rights reserved.</span><span>Prices in USD and subject to change.</span></div>
+</div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return[].slice.call((c||document).querySelectorAll(s))};
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* products */
+var P=[
+ {n:'Aurora 17 Pro',d:'6.3" ProMotion · titanium',p:1199,c:['#9db8ff','#2a2f6b'],t:'New'},
+ {n:'Nova S26 Ultra',d:'200MP · built-in S Pen',p:1299,c:['#e9c9a0','#5a3420'],t:'Best seller'},
+ {n:'Pixel 10 Pro',d:'Best-in-class AI camera',p:999,c:['#8fe0c8','#124a42'],t:''},
+ {n:'Fold Z7',d:'7.6" folding display',p:1799,c:['#d3a6ff','#3b1b63'],t:'Limited'}
+];
+$('#pg').innerHTML=P.map(function(x,i){return '<article class="pc rv" style="--d:'+i*.08+'s"><div class="pv"><div class="ph" style="--c1:'+x.c[0]+';--c2:'+x.c[1]+'"><div class="scr"></div></div></div><div><span class="tag">'+(x.t||'&nbsp;')+'</span><h3>'+x.n+'</h3><p>'+x.d+'</p></div><div class="pr"><strong>$'+x.p.toLocaleString()+'</strong><button class="add" data-i="'+i+'">Add to cart</button></div></article>'}).join('');
+
+var n=0,cnt=$('#cnt'),toast=$('#toast'),tt;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},2200)}
+$('#pg').addEventListener('click',function(e){var b=e.target.closest('.add');if(!b)return;
+ n++;cnt.textContent=n;cnt.classList.add('pop');setTimeout(function(){cnt.classList.remove('pop')},250);
+ b.classList.add('ok');b.textContent='Added';setTimeout(function(){b.classList.remove('ok');b.textContent='Add to cart'},1600);
+ say(P[b.dataset.i].n+' added to cart')});
+$('#cartBtn').addEventListener('click',function(){say(n?n+' item'+(n>1?'s':'')+' in your cart':'Your cart is empty. Pick a phone.')});
+
+/* billing toggle */
+$$('.tg button').forEach(function(b){b.addEventListener('click',function(){
+ $$('.tg button').forEach(function(x){x.classList.toggle('on',x===b)});var y=b.dataset.b==='y';
+ $$('[data-m]').forEach(function(s){s.textContent=y?s.dataset.y:s.dataset.m});
+ $$('.per').forEach(function(s){s.textContent=y?'yr':'mo'})})});
+
+/* clock on phone */
+function tick(){var d=new Date();$('#tm').textContent=d.getHours()+':'+('0'+d.getMinutes()).slice(-2);$('#dt').textContent=d.toLocaleDateString('en',{weekday:'long',day:'numeric',month:'long'})}
+tick();setInterval(tick,20000);
+
+/* nav */
+var nav=$('#nav');function sc(){nav.classList.toggle('s',scrollY>30)}sc();
+
+/* parallax (rAF throttled) */
+var ps=$$('[data-p]'),raf=0;
+function par(){raf=0;if(reduce||innerWidth<860)return;var y=scrollY;ps.forEach(function(el){var r=+el.dataset.p,b=el.classList.contains('b')?'translate(34%,8%) rotate(9deg)':'rotate(-6deg)';el.style.transform='translateY('+y*r*.25+'px) '+b})}
+addEventListener('scroll',function(){sc();if(!raf)raf=requestAnimationFrame(par)},{passive:true});
+
+/* reveal + counters */
+function count(el){var t=+el.dataset.n,dec=+el.dataset.d||0,s=null;
+ if(reduce){el.textContent=t.toLocaleString(undefined,{minimumFractionDigits:dec});return}
+ (function f(ts){s=s||ts;var k=Math.min((ts-s)/1800,1),v=t*(1-Math.pow(1-k,4));
+  el.textContent=v.toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec});if(k<1)requestAnimationFrame(f)})(performance.now())}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');$$('[data-n]',e.target).forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+$$('.rv').forEach(function(el){io.observe(el)});
+
+/* FAQ: one open at a time */
+$$('details').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)$$('details').forEach(function(o){if(o!==d)o.open=false})})});
+})();
+</script>
+</body>
+</html>
